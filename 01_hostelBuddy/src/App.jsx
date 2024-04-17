@@ -1,4 +1,4 @@
-import { Footer, Header, Main } from "./components"
+import { Footer, Header } from "./components"
 
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Header/>
-      <Main />
+
       <Footer/>
     </>
   )

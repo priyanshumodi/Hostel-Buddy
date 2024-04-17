@@ -1,4 +1,5 @@
 import React from "react";
+import { Link,NavLink } from "react-router-dom";
 
 function Header() {
     return (
@@ -6,17 +7,72 @@ function Header() {
         <div>
           <h1 className="text-yellow-600 text-3xl uppercase font-bold">hostel buddy</h1>
         </div>
-        <div className="hidden md:flex w-[60%] justify-between items-center flex-wrap uppercase font-medium">
-          <div className="text-yellow-600 cursor-pointer">Home</div>
-          <div className="text-white hover:text-yellow-600 cursor-pointer">Services</div>
-          <div className="text-white hover:text-yellow-600 cursor-pointer">room</div>
-          <div className="text-white hover:text-yellow-600 cursor-pointer">page</div>
-          <div className="text-white hover:text-yellow-600 cursor-pointer">about</div>
-          <div className="text-white hover:text-yellow-600 cursor-pointer">contact</div>
+
+        <div className="hidden md:flex w-[60%] justify-around items-center flex-wrap uppercase font-medium">
+          <div className="text-yellow-600 cursor-pointer">
+            <NavLink
+            to={'/'}
+            className={({isActive}) => `${isActive?"text-yellow-600":"text-white"} hover:text-yellow-600`}
+            >
+              Home
+            </NavLink>
+          </div>
+
+          <div className="text-white cursor-pointer">
+            <NavLink
+            to={'/services'}
+            className={({isActive}) => `${isActive?"text-yellow-600":"text-white"} hover:text-yellow-600`}
+            >
+              Services
+            </NavLink>
+          </div>
+
+          <div className="text-white hover:text-yellow-600 cursor-pointer"> 
+            <NavLink
+            to={'/room'}
+            className={({isActive}) => `${isActive?"text-yellow-600":"text-white"} hover:text-yellow-600`}
+            >
+              room
+            </NavLink>
+          </div>
+
+          <div className="text-white hover:text-yellow-600 cursor-pointer">
+            <NavLink
+            to={'/about'}
+            className={({isActive}) => `${isActive?"text-yellow-600":"text-white"} hover:text-yellow-600`}
+            >
+              about
+            </NavLink>
+          </div>
+
+          <div className="text-white hover:text-yellow-600 cursor-pointer">
+            <NavLink
+            to={'/contact'}
+            className={({isActive}) => `${isActive?"text-yellow-600":"text-white"} hover:text-yellow-600`}
+            >
+              contact
+            </NavLink>
+          </div>
         </div>
-        <div>
-            
-            <button  className="hidden md:block bg-yellow-600 p-2 font-semibold m-4"> <a href="signup.html">Login/Signup</a></button>
+        
+        <div className=" flex justify-around">
+        <button  className="hidden md:block bg-yellow-600 font-semibold m-4 px-4"> 
+              <NavLink
+              to={'/login'}
+              className={({isActive}) => `${isActive?"text-black":"text-white"} hover:text-black`}
+              >
+                Login
+              </NavLink>
+            </button>
+
+            <button  className="hidden md:block bg-yellow-600 p-2 font-semibold m-4"> 
+              <NavLink
+              to={'/signup'}
+              className={({isActive}) => `${isActive?"text-black":"text-white"} hover:text-black`}
+              >
+                Signup
+              </NavLink>
+            </button>
         </div>
         </nav>
     )

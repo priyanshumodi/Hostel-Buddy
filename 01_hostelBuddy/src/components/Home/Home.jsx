@@ -1,6 +1,6 @@
 import React from "react";
 
-function Main() {
+function Home() {
     return (
         <>
        {/* <!-- main start here --> */}
@@ -113,4 +113,4 @@ function Main() {
     )
 }
 
-export default Main
+export default Home
