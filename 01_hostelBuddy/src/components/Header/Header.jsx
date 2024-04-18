@@ -5,14 +5,14 @@ function Header() {
     return (
         <nav className="w-full h-20 bg-gray-800 flex justify-around items-center">
         <div>
-          <h1 className="text-yellow-600 text-3xl uppercase font-bold">hostel buddy</h1>
+          <h1 className="text-amber-500 text-3xl uppercase font-bold">hostel buddy</h1>
         </div>
 
         <div className="hidden md:flex w-[60%] justify-around items-center flex-wrap uppercase font-medium">
-          <div className="text-yellow-600 cursor-pointer">
+          <div className="text-amber-500 cursor-pointer">
             <NavLink
             to={'/'}
-            className={({isActive}) => `${isActive?"text-yellow-600":"text-white"} hover:text-yellow-600`}
+            className={({isActive}) => `${isActive?"text-amber-500":"text-white"} hover:text-amber-500`}
             >
               Home
             </NavLink>
@@ -21,34 +21,34 @@ function Header() {
           <div className="text-white cursor-pointer">
             <NavLink
             to={'/services'}
-            className={({isActive}) => `${isActive?"text-yellow-600":"text-white"} hover:text-yellow-600`}
+            className={({isActive}) => `${isActive?"text-amber-500":"text-white"} hover:text-amber-500`}
             >
               Services
             </NavLink>
           </div>
 
-          <div className="text-white hover:text-yellow-600 cursor-pointer"> 
+          <div className="text-white hover:text-amber-500 cursor-pointer"> 
             <NavLink
             to={'/room'}
-            className={({isActive}) => `${isActive?"text-yellow-600":"text-white"} hover:text-yellow-600`}
+            className={({isActive}) => `${isActive?"text-amber-500":"text-white"} hover:text-amber-500`}
             >
               room
             </NavLink>
           </div>
 
-          <div className="text-white hover:text-yellow-600 cursor-pointer">
+          <div className="text-white hover:text-amber-500 cursor-pointer">
             <NavLink
             to={'/about'}
-            className={({isActive}) => `${isActive?"text-yellow-600":"text-white"} hover:text-yellow-600`}
+            className={({isActive}) => `${isActive?"text-amber-500":"text-white"} hover:text-amber-500`}
             >
               about
             </NavLink>
           </div>
 
-          <div className="text-white hover:text-yellow-600 cursor-pointer">
+          <div className="text-white hover:text-amber-500 cursor-pointer">
             <NavLink
             to={'/contact'}
-            className={({isActive}) => `${isActive?"text-yellow-600":"text-white"} hover:text-yellow-600`}
+            className={({isActive}) => `${isActive?"text-amber-500":"text-white"} hover:text-amber-500`}
             >
               contact
             </NavLink>
@@ -56,7 +56,7 @@ function Header() {
         </div>
         
         <div className=" flex justify-around">
-        <button  className="hidden md:block bg-yellow-600 font-semibold m-4 px-4"> 
+        <button  className="hidden md:block bg-amber-500 font-semibold m-4 px-4"> 
               <NavLink
               to={'/login'}
               className={({isActive}) => `${isActive?"text-black":"text-white"} hover:text-black`}
@@ -65,7 +65,7 @@ function Header() {
               </NavLink>
             </button>
 
-            <button  className="hidden md:block bg-yellow-600 p-2 font-semibold m-4"> 
+            <button  className="hidden md:block bg-amber-500 p-2 font-semibold m-4"> 
               <NavLink
               to={'/signup'}
               className={({isActive}) => `${isActive?"text-black":"text-white"} hover:text-black`}

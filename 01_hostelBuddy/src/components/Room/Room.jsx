@@ -18,7 +18,7 @@ function Room() {
             <div class="mx-2 uppercase font-bold text-yellow-500">Our Rooms</div>
             <div class=" w-16 h-1 border-2 border-yellow-400 rounded-2xl mt-[11px] mb-2"></div>
         </div>
-        <div class="text-4xl font-bold mt-2 mb-12">
+        <div class="text-5xl font-bold mt-2 mb-12">
             Explore Our <span class="text-yellow-500">ROOMS</span>
         </div>
 
