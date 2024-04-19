@@ -54,26 +54,18 @@ function Header() {
             </NavLink>
           </div>
         </div>
-        
-        <div className=" flex justify-around">
-        <button  className="hidden md:block bg-amber-500 font-semibold m-4 px-4"> 
+       
+        <div>
+        <button  className="hidden text-xl md:block bg-amber-500 font-semibold m-4 px-8 py-2"> 
               <NavLink
               to={'/login'}
               className={({isActive}) => `${isActive?"text-black":"text-white"} hover:text-black`}
               >
                 Login
               </NavLink>
-            </button>
-
-            <button  className="hidden md:block bg-amber-500 p-2 font-semibold m-4"> 
-              <NavLink
-              to={'/signup'}
-              className={({isActive}) => `${isActive?"text-black":"text-white"} hover:text-black`}
-              >
-                Signup
-              </NavLink>
-            </button>
+        </button>
         </div>
+
         </nav>
     )
 }

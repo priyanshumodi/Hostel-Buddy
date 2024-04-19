@@ -1,14 +1,16 @@
 import React from "react";
-// import background from "https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+//import background from "https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 
 function Room() {
+    const background = "https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     return (
     <>
-    
-    {/* <div class="h-64 bg-no-repeat text-7xl text-center pt-24 font-bold text-white" 
-    style={{ backgroundImage: background }}>
-    ROOMS
-    </div> */}
+     {background && (
+        <div class="h-64 bg-no-repeat bg-cover text-7xl text-center pt-24 font-bold text-white" 
+        style={{ backgroundImage: `url(${background})` }}>
+        ROOMS
+        </div> 
+     )}
 
       
     

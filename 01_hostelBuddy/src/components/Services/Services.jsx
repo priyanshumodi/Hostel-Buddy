@@ -1,16 +1,18 @@
 import React from "react";
 
 function Services() {
+    const background = "https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     return (
-        // <!-- Services start here -->
-        
-    // <div class="bg-cover h-64 bg-no-repeat text-7xl text-center pt-24 font-bold text-white" 
-    // style="background-image: url(https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);"
-    // >
-    //     Services
-    // </div>
+        // Services start here 
+        <>
+        {background && (
+            <div class="h-64 bg-no-repeat bg-cover text-7xl text-center pt-24 font-bold text-white" 
+            style={{ backgroundImage: `url(${background})` }}>
+            SERVICES
+            </div> 
+        )}
       
-    // <!-- cards section starts here -->
+    {/* cards section starts here  */}
     <div class="w-full h-auto px-28 mt-24 text-center">
         <div class="flex justify-center">
             <div class=" w-16 h-1 border-2 border-yellow-400 rounded-2xl mt-[11px] mb-2"></div>
@@ -67,10 +69,11 @@ function Services() {
             
         </div>
      </div>
-    // <!-- cards section ends here -->
+    {/* cards section ends here  */}
       
 
-    // <!-- Services section ends here -->
+    {/* Services section ends here  */}
+    </>
     )
 }
 
