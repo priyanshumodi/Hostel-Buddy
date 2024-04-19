@@ -14,7 +14,7 @@ function Room() {
 
       
     
-    <div className="w-full h-auto px-28 mt-24 text-center">
+    <div className="w-full h-auto px-28 mt-24 text-center pb-8">
         <div className="flex justify-center">
             <div className=" w-16 h-1 border-2 border-yellow-400 rounded-2xl mt-[11px] mb-2"></div>
             <div class="mx-2 uppercase font-bold text-yellow-500">Our Rooms</div>

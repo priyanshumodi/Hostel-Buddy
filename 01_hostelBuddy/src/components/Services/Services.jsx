@@ -13,7 +13,7 @@ function Services() {
         )}
       
     {/* cards section starts here  */}
-    <div class="w-full h-auto px-28 mt-24 text-center">
+    <div class="w-full h-auto px-28 mt-24 pb-8 text-center">
         <div class="flex justify-center">
             <div class=" w-16 h-1 border-2 border-yellow-400 rounded-2xl mt-[11px] mb-2"></div>
             <div class="mx-2 uppercase font-bold text-yellow-500">Our Services</div>
