@@ -7,6 +7,7 @@ import Room from "./Room/Room"
 import Services from './Services/Services'
 import Login from "./Login/Login"
 import Signup from "./Signup/Signup"
+import Card from "./Room/Card"
 
 export {
     Header,
@@ -17,5 +18,6 @@ export {
     Room,
     Services,
     Login,
-    Signup
+    Signup,
+    Card
 }

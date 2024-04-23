@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "../Room/Card";
 
 function Home() {
     return (
@@ -57,7 +58,7 @@ function Home() {
     
     
         {/* <!-- cards section starts here --> */}
-         <div className="w-full h-screen px-28 mt-24 text-center">
+         <div className="w-full h-auto px-28 pb-4 mt-24 text-center">
             <div className="flex justify-center">
                 <div className=" w-16 h-1 border-2 border-yellow-400 rounded-2xl mt-[11px] mb-2"></div>
                 <div className="mx-2 uppercase font-bold text-yellow-500">Our Rooms</div>
@@ -66,46 +67,10 @@ function Home() {
             <div className="text-4xl font-bold mt-2 mb-12">
                 Explore Our <span className="text-yellow-500">ROOMS</span>
             </div>
-            <div className="flex justify-between">
-                <div className="w-[22rem] border rounded shadow-xl">
-                    <div>
-                        <img className="border rounded" src={"https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8fDB8fHww"} alt="" />
-                    </div>
-                    <div>
-                        <div className="my-3 ml-2 text-2xl font-bold">Junior Suite</div>
-                        <div className="mb-4 mx-2 text-gray-600">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</div>
-                        <div className="flex justify-around mb-6">
-                            <button className="uppercase bg-yellow-500 text-white w-32 h-9">view details</button>
-                            <button className="uppercase bg-gray-800 w-32 text-white h-9">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-                <div className="w-[22rem] border rounded shadow-xl">
-                    <div>
-                        <img className="border rounded" src={"https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8fDB8fHww"} alt="" />
-                    </div>
-                    <div>
-                        <div className="my-3 ml-2 text-2xl font-bold">Junior Suite</div>
-                        <div className="mb-4 mx-2 text-gray-600">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</div>
-                        <div className="flex justify-around mb-6">
-                            <button className="uppercase bg-yellow-500 text-white w-32 h-9">view details</button>
-                            <button className="uppercase bg-gray-800 w-32 text-white h-9">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-                <div className="w-[22rem] border rounded shadow-xl">
-                    <div>
-                        <img className="border rounded" src={"https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8fDB8fHww"} alt="" />
-                    </div>
-                    <div>
-                        <div className="my-3 ml-2 text-2xl font-bold">Junior Suite</div>
-                        <div className="mb-4 mx-2 text-gray-600">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</div>
-                        <div className="flex justify-around mb-6">
-                            <button className="uppercase bg-yellow-500 text-white w-32 h-9">view details</button>
-                            <button className="uppercase bg-gray-800 w-32 text-white h-9">Book Now</button>
-                        </div>
-                    </div>
-                </div>
+            <div className="grid gap-x-8 gap-y-4 grid-cols-3">
+                <Card/>
+                <Card/>
+                <Card/>
             </div>
          </div>
         {/* <!-- cards section ends here --> */}
