@@ -4,7 +4,9 @@ import App from './App.jsx'
 import './index.css'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import Layout from './Layout.jsx'
-import { Home,About,Contact,Room, Services, Login, Signup } from './components/index.js'
+import { Home,About,Contact,Room, Services, Login, Signup} from './components/index.js'
+import Slider from './components/Room/Slider.jsx'
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -16,6 +18,7 @@ const router = createBrowserRouter(
       <Route path='services' element={<Services />} />
       <Route path='login' element={<Login />} />
       <Route path='signup' element={<Signup />} />
+      <Route path='slider' element={<Slider/>} />
     </Route>
   )
 )
@@ -23,5 +26,6 @@ const router = createBrowserRouter(
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router}/>
+    
   </React.StrictMode>,
 )

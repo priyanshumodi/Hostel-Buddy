@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+import { Link } from "react-router-dom";
 //import background from "https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 
 function Room() {
@@ -26,7 +27,12 @@ function Room() {
         </div>
 
         <div class="grid gap-x-8 gap-y-4 grid-cols-3">
-            <Card/>
+            <Link
+            to={'/slider'}
+
+            >
+                <Card admin="true"/>
+            </Link>
             <Card/>
             <Card/>
             <Card/>
@@ -44,3 +50,25 @@ function Room() {
 }
 
 export default Room
+
+// import { Link } from 'react-router-dom';
+
+// function Home() {
+//   const items = [
+//     { id: 1, name: 'Item 1' },
+//     { id: 2, name: 'Item 2' },
+//   ];
+
+//   return (
+//     <div>
+//       <h1>Items</h1>
+//       <ul>
+//         {items.map((item) => (
+//           <li key={item.id}>
+//             <Link to={`/details/${item.id}`}>{item.name}</Link>
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// }

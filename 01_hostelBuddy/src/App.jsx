@@ -1,15 +1,13 @@
-import { Footer, Header } from "./components"
-
+import { Footer, Header } from "./components/index"
+import Slider from "./components/Room/Slider"
 
 function App() {
   
 
   return (
-    <>
-      <Header/>
-
-      <Footer/>
-    </>
+    
+    <Slider/>
+    
   )
 }
 
