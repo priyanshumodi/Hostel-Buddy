@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card";
-import { Link } from "react-router-dom";
+import { Link,NavLink } from "react-router-dom";
 //import background from "https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 
 function Room() {
@@ -27,12 +27,12 @@ function Room() {
         </div>
 
         <div className="grid gap-x-8 gap-y-4 grid-cols-3">
-            <Link
-            to={'/roomBook'}
+            <NavLink
+            to={'roomBook'}
 
             >
                 <Card admin="true"/>
-            </Link>
+            </NavLink>
             <Card/>
             <Card/>
             <Card/>
