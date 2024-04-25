@@ -8,7 +8,7 @@ function Room() {
     return (
     <>
      {background && (
-        <div class="h-64 bg-no-repeat bg-cover text-7xl text-center pt-24 font-bold text-white" 
+        <div className="h-64 bg-no-repeat bg-cover text-7xl text-center pt-24 font-bold text-white" 
         style={{ backgroundImage: `url(${background})` }}>
         ROOMS
         </div> 
@@ -19,14 +19,14 @@ function Room() {
     <div className="w-full h-auto px-28 mt-24 text-center pb-8">
         <div className="flex justify-center">
             <div className=" w-16 h-1 border-2 border-yellow-400 rounded-2xl mt-[11px] mb-2"></div>
-            <div class="mx-2 uppercase font-bold text-yellow-500">Our Rooms</div>
-            <div class=" w-16 h-1 border-2 border-yellow-400 rounded-2xl mt-[11px] mb-2"></div>
+            <div className="mx-2 uppercase font-bold text-yellow-500">Our Rooms</div>
+            <div className=" w-16 h-1 border-2 border-yellow-400 rounded-2xl mt-[11px] mb-2"></div>
         </div>
-        <div class="text-5xl font-bold mt-2 mb-12">
+        <div className="text-5xl font-bold mt-2 mb-12">
             Explore Our <span class="text-yellow-500">ROOMS</span>
         </div>
 
-        <div class="grid gap-x-8 gap-y-4 grid-cols-3">
+        <div className="grid gap-x-8 gap-y-4 grid-cols-3">
             <Link
             to={'/roomBook'}
 

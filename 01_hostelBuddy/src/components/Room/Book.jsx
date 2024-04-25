@@ -6,7 +6,7 @@ const Book = () => {
       <h1 className="text-2xl font-bold text-center mb-4">Hostel Booking Form</h1>
       <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div className="mb-4">
-          <label className="block text-zinc-700 text-sm font-bold mb-2" for="name">
+          <label className="block text-zinc-700 text-sm font-bold mb-2" htmlFor="name">
             Full Name
           </label>
           <input
@@ -17,7 +17,7 @@ const Book = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-zinc-700 text-sm font-bold mb-2" for="email">
+          <label className="block text-zinc-700 text-sm font-bold mb-2" htmlFor="email">
             Email Address
           </label>
           <input
@@ -28,7 +28,7 @@ const Book = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-zinc-700 text-sm font-bold mb-2" for="check-in">
+          <label className="block text-zinc-700 text-sm font-bold mb-2" htmlFor="check-in">
             Check-in Date
           </label>
           <input
@@ -38,7 +38,7 @@ const Book = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-zinc-700 text-sm font-bold mb-2" for="name">
+          <label className="block text-zinc-700 text-sm font-bold mb-2" htmlFor="name">
             Price
           </label>
           <input
@@ -49,7 +49,7 @@ const Book = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-zinc-700 text-sm font-bold mb-2" for="payment">
+          <label className="block text-zinc-700 text-sm font-bold mb-2" htmlFor="payment">
             Payment Method
           </label>
           <select
