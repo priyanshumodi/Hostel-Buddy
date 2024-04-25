@@ -1,12 +1,12 @@
-import { Footer, Header } from "./components/index"
-import Slider from "./components/Room/Slider"
+import React from "react"
+
 
 function App() {
   
 
   return (
     
-    <Slider/>
+    <div></div>
     
   )
 }

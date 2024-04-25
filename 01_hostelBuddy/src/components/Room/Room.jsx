@@ -28,7 +28,7 @@ function Room() {
 
         <div class="grid gap-x-8 gap-y-4 grid-cols-3">
             <Link
-            to={'/slider'}
+            to={'/roomBook'}
 
             >
                 <Card admin="true"/>
