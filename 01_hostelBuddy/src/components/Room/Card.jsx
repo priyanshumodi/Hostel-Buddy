@@ -1,13 +1,13 @@
 import React from "react";
 
 function Card(admin) {
-  console.log(admin.admin)
+  // console.log(admin.admin)
     return (
         <>
         <div className="wrapper bg-white antialiased text-gray-900">
                 <div>
     
-                <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8fDB8fHww" alt=" random imgee" class="w-full object-cover object-center rounded-lg shadow-md"/>    
+                <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8fDB8fHww" alt=" random imgee" className="w-full object-cover object-center rounded-lg shadow-md"/>    
     
                 <div className="relative px-4 -mt-16  ">
                    <div className="bg-white p-6 rounded-lg shadow-lg">
