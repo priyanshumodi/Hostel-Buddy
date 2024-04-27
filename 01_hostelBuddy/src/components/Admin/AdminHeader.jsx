@@ -11,7 +11,7 @@ function Header() {
         <div className="hidden md:flex w-[60%] justify-around items-center flex-wrap uppercase font-medium">
           <div className="text-amber-500 cursor-pointer">
             <NavLink
-            to={'/'}
+            to={'/admin'}
             className={({isActive}) => `${isActive?"text-amber-500":"text-white"} hover:text-amber-500`}
             >
               Home
@@ -20,7 +20,7 @@ function Header() {
 
           <div className="text-white cursor-pointer">
             <NavLink
-            to={'/services'}
+            to={'adminService'}
             className={({isActive}) => `${isActive?"text-amber-500":"text-white"} hover:text-amber-500`}
             >
               Services
@@ -29,7 +29,7 @@ function Header() {
 
           <div className="text-white hover:text-amber-500 cursor-pointer"> 
             <NavLink
-            to={'/room'}
+            to={'adminRoom'}
             className={({isActive}) => `${isActive?"text-amber-500":"text-white"} hover:text-amber-500`}
             >
               room
@@ -38,7 +38,7 @@ function Header() {
 
           <div className="text-white hover:text-amber-500 cursor-pointer">
             <NavLink
-            to={'/messages'}
+            to={'adminMessages'}
             className={({isActive}) => `${isActive?"text-amber-500":"text-white"} hover:text-amber-500`}
             >
               messages

@@ -1,6 +1,10 @@
 import React from "react";
 
 function About() {
+  const number = []
+  for(let i=1;i<5;i++) {
+    number.push(i)
+  }
   const background = "https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     return (
         // <!-- about section starts here -->
@@ -28,7 +32,9 @@ function About() {
           <div className="my-8 flex flex-wrap md:flex-nowrap">
               <div className="w-36 py-8 px-20 m-2 mb-4 flex flex-col content-center justify-center items-center border-4 border-sky-900">
                   <div><i className="fa-solid fa-hotel text-yellow-500 font-extrabold text-4xl"></i></div>
-                  <div className="text-4xl font-bold">1234</div>
+                  <div className="text-4xl font-bold">{number.map((n)=>(
+                    <span key={n}>{n}</span>
+                  ))}</div>
                   <div className="text-slate-600">Rooms</div>
               </div>
               <div className="w-36 py-8 px-20 m-2 mb-4 flex flex-col content-center justify-center items-center border-4 border-sky-900">

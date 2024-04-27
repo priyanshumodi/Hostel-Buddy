@@ -9,7 +9,9 @@ import RoomBook from './components/Room/RoomBook.jsx';
 import Book from './components/Room/Book.jsx';
 import AdminLayout from './AdminLayout.jsx';
 import Admin from './components/Admin/Admin.jsx';
-import Message from './components/Admin/Message.jsx';
+import AdminMessage from './components/Admin/AdminMessage.jsx';
+import AdminRoom from "./components/Admin/AdminRoom.jsx"
+import AdminService from './components/Admin/AdminServices.jsx'
 
 // Improved routing configuration:
 const routes = (
@@ -30,7 +32,9 @@ const routes = (
     <Route path='/admin' element={<AdminLayout/>}>
        <Route index element={<Admin/>}/>
        {/* <Route path='*' element={<Admin/>}/> //ese bhi likh sakte hai */}
-       <Route path='messages' element={<Message/>} />
+       <Route path='adminMessages' element={<AdminMessage/>} />
+       <Route path='adminRoom' element={<AdminRoom/>} />
+       <Route path='adminService' element={<AdminService/>} />
     </Route>
   </Routes>
 );
