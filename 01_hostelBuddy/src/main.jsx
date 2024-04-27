@@ -9,6 +9,7 @@ import RoomBook from './components/Room/RoomBook.jsx';
 import Book from './components/Room/Book.jsx';
 import AdminLayout from './AdminLayout.jsx';
 import Admin from './components/Admin/Admin.jsx';
+import Message from './components/Admin/Message.jsx';
 
 // Improved routing configuration:
 const routes = (
@@ -29,6 +30,7 @@ const routes = (
     <Route path='/admin' element={<AdminLayout/>}>
        <Route index element={<Admin/>}/>
        {/* <Route path='*' element={<Admin/>}/> //ese bhi likh sakte hai */}
+       <Route path='messages' element={<Message/>} />
     </Route>
   </Routes>
 );
