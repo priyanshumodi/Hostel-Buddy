@@ -24,7 +24,7 @@ const routes = (
       <Route path="contact" element={<Contact />} />
       <Route path="room">
         <Route index element={<Room />} /> {/* Room route at exact path '/room' */}
-        <Route path="roomBook" element={<RoomBook />} /> {/* Nested route for booking */}
+        <Route path="roomBook/:userId" element={<RoomBook />} /> {/* Nested route for booking */}
       </Route>
       <Route path="services" element={<Services />} />
       <Route path="login" element={<Login />} />

@@ -1,7 +1,6 @@
 import React from "react";
 
 function Card(details) {
-  console.log(details)
     return (
         <>
         <div className="wrapper bg-white antialiased text-gray-900">

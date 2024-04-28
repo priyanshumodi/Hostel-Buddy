@@ -1,15 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Book from './Book';
-const background = "https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 
-const images = [
-  background,
-  "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8fDB8fHww",
-  background,
-];
 
 function RoomBook() {
+  const {userId} = useParams()
+  const rooms = useSelector(state => state.room)
+
+  const [title,setTitle] = useState()
+  const [image,setImage] = useState()
+  const [price,setPrice] = useState()
+  const [description,setDescription] = useState()
+
+  useEffect(() => {
+    const found = rooms.find(room => room.id===userId)
+    // console.log(found)
+    setTitle(found.title)
+    setImage(found.image)
+    setPrice(found.price)
+    setDescription(found.description)
+  },[userId])
+  
+
+  const images = [
+    image,
+  ];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isPopupOpen, setIsPopupOpen] = useState(false); // New state variable
 
@@ -52,9 +69,9 @@ function RoomBook() {
             </button>
           </div>
           <div className="p-4">
-            <h1 className="text-xl font-bold">Room Number: 21</h1>
-            <p className="text-lg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum, sint, inventore quas facilis aperiam ipsa, exercitationem error recusandae molestiae quisquam ab magni eligendi repudiandae delectus debitis culpa rem nostrum necessitatibus?</p>
-            <p className="text-xl font-bold mt-2">$99.99 / month</p>
+            <h1 className="text-xl font-bold">{title}</h1>
+            <p className="text-lg">{description}</p>
+            <p className="text-xl font-bold mt-2">${price} / month</p>
             <div className="mt-4">
               <span className="text-teal-600 text-md font-semibold">4/5 ratings </span>
               <span className="text-sm text-gray-600">(based on 234 ratings)</span>
