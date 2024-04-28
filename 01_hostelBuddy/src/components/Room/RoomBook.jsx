@@ -7,7 +7,7 @@ import Book from './Book';
 
 function RoomBook() {
   const {userId} = useParams()
-  const rooms = useSelector(state => state.room)
+  const rooms = useSelector(state => state.roomReducer.room)
 
   const [title,setTitle] = useState()
   const [image,setImage] = useState()
