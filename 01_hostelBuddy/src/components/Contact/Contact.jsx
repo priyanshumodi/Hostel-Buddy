@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import {useDispatch} from 'react-redux'
 import { addMessage } from "../../features/message/messageSlice";
+import AdminMessage from "../Admin/AdminMessage";
 
 function Contact() {
   const background = "https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -115,6 +116,7 @@ function Contact() {
            
          </div>
         
+        <AdminMessage/>
          {/* cards section ends here  */}
           
     
