@@ -1,9 +1,11 @@
 import React from "react";
 import Card from "./Card";
+import {useSelector} from "react-redux"
 import { Link,NavLink } from "react-router-dom";
 //import background from "https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 
 function Room() {
+    const rooms = useSelector(state => state.room)
     const background = "https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     return (
     <>
@@ -27,17 +29,18 @@ function Room() {
         </div>
 
         <div className="grid gap-x-8 gap-y-4 grid-cols-3">
-            <NavLink
-            to={'roomBook'}
-
-            >
-                <Card admin="true"/>
-            </NavLink>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
+            {rooms.map((room) => (
+                <NavLink
+                to={'roomBook'}
+                >
+                    <Card 
+                    title={room.title} 
+                    image={room.image} 
+                    price={room.price}
+                    new={room.new}
+                    />
+                </NavLink>
+            ))}
             
         </div>
      </div>

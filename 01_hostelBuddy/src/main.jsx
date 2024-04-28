@@ -12,6 +12,8 @@ import Admin from './components/Admin/Admin.jsx';
 import AdminMessage from './components/Admin/AdminMessage.jsx';
 import AdminRoom from "./components/Admin/AdminRoom.jsx"
 import AdminService from './components/Admin/AdminServices.jsx'
+import { Provider } from 'react-redux';
+import {store} from './app/store.js'
 
 // Improved routing configuration:
 const routes = (
@@ -40,7 +42,7 @@ const routes = (
 );
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <Provider store={store}>
     <Router>{routes}</Router> {/* Wrap routes with Router */}
-  </React.StrictMode>
+  </Provider>
 );
