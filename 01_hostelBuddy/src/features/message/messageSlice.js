@@ -8,11 +8,12 @@ const initialState = {
     ],
 }
 
-export const messageSlice = {
+export const messageSlice = createSlice({
     name:"messages",
     initialState,
     reducers: {
         addMessage: (state,action) => {
+            console.log(action.payload.name)
             const message = {
                 id : nanoid(),
                 name: action.payload.name,
@@ -20,9 +21,12 @@ export const messageSlice = {
                 subject: action.payload.subject,
                 message: action.payload.message,
             }
+            console.log(message)
             state.messages.push(message)
         }
     }
-}
+})
 
-export default messageSlice.reducers
+export const {addMessage} = messageSlice.actions
+
+export default messageSlice.reducer

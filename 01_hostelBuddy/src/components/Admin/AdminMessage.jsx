@@ -1,7 +1,10 @@
 import React from "react";
 import {Link} from 'react-router-dom'
+import {useSelector} from 'react-redux'
 
 const AdminMessage = () => {
+    const messages = useSelector(state => state.messageReducer.messages)
+    console.log(messages)
     return (
         <div>
         <section className="bg-white dark:bg-gray-900">
@@ -10,19 +13,21 @@ const AdminMessage = () => {
                 <h2 className="mb-4 text-4xl  font-extrabold text-gray-900 dark:text-white">Let's See What People Think About US</h2>
             </div> 
             <div className="flex flex-col  space-y-4">
-                <figure className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 dark:bg-gray-800 dark:border-gray-700">
+               { messages.map((message) => (
+                <figure key={message.id} className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 dark:bg-gray-800 dark:border-gray-700">
                     <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Solid foundation for any project</h3>
-                        <p className="my-4">"FlowBite provides a robust set of design tokens and components based on the popular Tailwind CSS framework. From the most used UI components like forms and navigation bars to the whole app screens designed both for desktop and mobile, this UI kit provides a solid foundation for any project.</p>
-                        </blockquote>
+                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{message.subject}</h3>
+                        <p className="my-4">{message.message}</p>
+                    </blockquote>
                     <figcaption className="flex justify-center items-center space-x-3">
                         <img className="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png" alt="profile picture" />
                         <div className="space-y-0.5 font-medium dark:text-white text-left">
-                            <div>Roberta Casas</div>
-                            <div className="text-sm font-light text-gray-500 dark:text-gray-400">Lead designer at Dropbox</div>
+                            <div>{message.name}</div>
+                            <div className="text-sm font-light text-gray-500 dark:text-gray-400">{message.email}</div>
                         </div>
                     </figcaption>    
                 </figure>
+               ))}
             </div>
             <div className="text-center mt-6">
                 <Link 

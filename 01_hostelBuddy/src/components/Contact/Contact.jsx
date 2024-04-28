@@ -1,7 +1,27 @@
-import React from "react";
+import React,{useState} from "react";
+import {useDispatch} from 'react-redux'
+import { addMessage } from "../../features/message/messageSlice";
 
 function Contact() {
   const background = "https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [subject, setSubject] = useState('')
+  const [message, setMessage] = useState('')
+
+
+  const dispatch = useDispatch()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log("whay")
+
+    console.log(name)
+
+    dispatch(addMessage({name,email,subject,message}))
+
+  }
     return (
     //    contact start here
     <>
@@ -53,12 +73,13 @@ function Contact() {
     
             {/* form starts  */}
             <div className="container mx-auto px-4 py-8">
-                <form className="flex flex-col space-y-4">
+                <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
                   <div className="flex flex-col">
                     <input 
                     type="text" 
                     id="name" 
                     name="name" 
+                    onChange={e => setName(e.target.value)}
                     placeholder="Your Name" 
                     className="border border-gray-300 p-2 focus:outline-none focus:ring-1 focus:ring-yellow-500" 
                     />
@@ -67,6 +88,7 @@ function Contact() {
                     <input type="email" 
                     id="email" 
                     name="email" 
+                    onChange={e => setEmail(e.target.value)}
                     placeholder="Your Email" 
                     className="border border-gray-300 p-2 focus:outline-none focus:ring-1 focus:ring-yellow-500" 
                     />
@@ -76,12 +98,13 @@ function Contact() {
                     type="text" 
                     id="subject" 
                     name="subject" 
+                    onChange={e => setSubject(e.target.value)}
                     placeholder="Subject" 
                     className="border border-gray-300 p-2 focus:outline-none focus:ring-1 focus:ring-yellow-500" 
                     />
                   </div>
                   <div className="flex flex-col">
-                    <textarea id="message" name="message" rows="5" placeholder="Message" className="border border-gray-300 p-2 focus:outline-none focus:ring-1 focus:ring-yellow-500"></textarea>
+                    <textarea id="message" name="message" onChange={e => setMessage(e.target.value)} rows="5" placeholder="Message" className="border border-gray-300 p-2 focus:outline-none focus:ring-1 focus:ring-yellow-500"></textarea>
                   </div>
                   <button type="submit" className="text-center p-4 bg-amber-500 text-white rounded hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400">
                     Send Inquiry
