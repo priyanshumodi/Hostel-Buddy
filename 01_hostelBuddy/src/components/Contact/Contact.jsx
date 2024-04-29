@@ -1,5 +1,5 @@
-import React,{useState} from "react";
-import {useDispatch} from 'react-redux'
+import React,{useEffect, useState} from "react";
+import {useDispatch,useSelector} from 'react-redux'
 import { addMessage } from "../../features/message/messageSlice";
 import AdminMessage from "../Admin/AdminMessage";
 
@@ -10,18 +10,28 @@ function Contact() {
   const [email, setEmail] = useState('')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
+  const [message1,setMessage1] = useState([])
 
 
   const dispatch = useDispatch()
 
+  // setMessage1(useSelector(state => state.messageReducer.messages))
+  useEffect(() => {
+    const tempMessages = JSON.parse(localStorage.getItem("messages"));
+    if (tempMessages) {
+      setMessage1(tempMessages)
+    }
+  },[])
+
+  useEffect(()=>{
+    console.log("message1")
+    localStorage.setItem("messages", JSON.stringify(message1))
+  },[message1])
+  
+
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log("whay")
-
-    console.log(name)
-
     dispatch(addMessage({name,email,subject,message}))
-
   }
     return (
     //    contact start here
