@@ -19,6 +19,10 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault()
     dispatch(addMessage({name,email,subject,message}))
+    setName('')
+    setEmail('')
+    setSubject('')
+    setMessage('')
   }
     return (
     //    contact start here
@@ -77,6 +81,7 @@ function Contact() {
                     type="text" 
                     id="name" 
                     name="name" 
+                    value={name}
                     onChange={e => setName(e.target.value)}
                     placeholder="Your Name" 
                     className="border border-gray-300 p-2 focus:outline-none focus:ring-1 focus:ring-yellow-500" 
@@ -86,6 +91,7 @@ function Contact() {
                     <input type="email" 
                     id="email" 
                     name="email" 
+                    value={email}
                     onChange={e => setEmail(e.target.value)}
                     placeholder="Your Email" 
                     className="border border-gray-300 p-2 focus:outline-none focus:ring-1 focus:ring-yellow-500" 
@@ -96,13 +102,14 @@ function Contact() {
                     type="text" 
                     id="subject" 
                     name="subject" 
+                    value={subject}
                     onChange={e => setSubject(e.target.value)}
                     placeholder="Subject" 
                     className="border border-gray-300 p-2 focus:outline-none focus:ring-1 focus:ring-yellow-500" 
                     />
                   </div>
                   <div className="flex flex-col">
-                    <textarea id="message" name="message" onChange={e => setMessage(e.target.value)} rows="5" placeholder="Message" className="border border-gray-300 p-2 focus:outline-none focus:ring-1 focus:ring-yellow-500"></textarea>
+                    <textarea id="message" value={message} name="message" onChange={e => setMessage(e.target.value)} rows="5" placeholder="Message" className="border border-gray-300 p-2 focus:outline-none focus:ring-1 focus:ring-yellow-500"></textarea>
                   </div>
                   <button type="submit" className="text-center p-4 bg-amber-500 text-white rounded hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400">
                     Send Inquiry
