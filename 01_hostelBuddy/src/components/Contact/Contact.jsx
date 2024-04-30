@@ -120,7 +120,6 @@ function Contact() {
            
          </div>
         
-        <AdminMessage/>
          {/* cards section ends here  */}
           
     

@@ -4,6 +4,10 @@ import {useSelector} from 'react-redux'
 
 const AdminMessage = () => {
     const messages = useSelector(state => state.messageReducer.messages)
+
+    // reverse message for new message first
+
+    const reverseMessage = [...messages].reverse()
     // console.log(messages)
     return (
         <div>
@@ -13,7 +17,7 @@ const AdminMessage = () => {
                 <h2 className="mb-4 text-4xl  font-extrabold text-gray-900 dark:text-white">Let's See What People Think About US</h2>
             </div> 
             <div className="flex flex-col  space-y-4">
-               {messages.map((message) => (
+               {reverseMessage.map((message) => (
                         <figure key={message.id} className="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 dark:bg-gray-800 dark:border-gray-700">
                             <blockquote className="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
                                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{message.subject}</h3>
