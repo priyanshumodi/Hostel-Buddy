@@ -39,6 +39,7 @@ function Room() {
                     image={room.image} 
                     price={room.price}
                     new={room.new}
+                    id={room.id}
                     />
                 </NavLink>
             ))}

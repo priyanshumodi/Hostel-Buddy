@@ -1,6 +1,8 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 
 function Card(details) {
+  const dispatch = useDispatch()
     return (
         <>
         <div className="wrapper bg-white antialiased text-gray-900">
@@ -11,7 +13,7 @@ function Card(details) {
                 <div className="relative px-4 -mt-16  ">
                    <div className="bg-white p-6 rounded-lg shadow-lg">
                     <div className="flex items-baseline">
-                      <span className={`bg-teal-200 text-teal-800 ${details.new==="true"?"":"hidden"} text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide`}>
+                      <span className={`bg-teal-200 text-teal-800 ${(details.new===true)?"":"hidden"} text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide`}>
                         New
                       </span>
                 </div>
@@ -27,8 +29,9 @@ function Card(details) {
                   <span className="text-sm text-gray-600">(based on 234 ratings)</span>
                 </div>  
                 <div className="flex justify-around py-4 ">
-                        <button className="uppercase bg-amber-500 hover:bg-amber-600 text-white w-32 h-9 rounded-md">view details</button>
-                        <button className="uppercase bg-gray-800 hover:bg-gray-900 w-32 text-white h-9 rounded-md">Book Now</button>
+                        <button className={`uppercase ${details.new==true?"":"hidden"} bg-amber-500 hover:bg-amber-600 text-white w-32 h-9 rounded-md`}>view details</button>
+                        <button className={`uppercase ${details.new==true?"":"hidden"} bg-gray-800 hover:bg-gray-900 w-32 text-white h-9 rounded-md`}>Book Now</button>
+                        <button onClick={() => dispatch(removeRoom(details.id))} className={`uppercase ${details.new===false?"":"hidden"} bg-red-600 hover:bg-rose-700 w-32 text-white h-9 rounded-md`}>Remove Room</button>
                 </div>
                 </div>
             </div>
