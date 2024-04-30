@@ -12,8 +12,14 @@ import Admin from './components/Admin/Admin.jsx';
 import AdminMessage from './components/Admin/AdminMessage.jsx';
 import AdminRoom from "./components/Admin/AdminRoom.jsx"
 import AdminService from './components/Admin/AdminServices.jsx'
+
+//redux
 import { Provider } from 'react-redux';
 import {store} from './app/store.js'
+
+// persist storage
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistor } from './app/store.js';
 
 // Improved routing configuration:
 const routes = (
@@ -43,6 +49,8 @@ const routes = (
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
-    <Router>{routes}</Router> {/* Wrap routes with Router */}
+    <PersistGate persistor={persistor}>
+        <Router>{routes}</Router> {/* Wrap routes with Router */}
+    </PersistGate>
   </Provider>
 );
