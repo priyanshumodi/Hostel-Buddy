@@ -30,10 +30,7 @@ function Room() {
 
         <div className="grid gap-x-8 gap-y-4 grid-cols-3">
             {rooms.map((room) => (
-                <NavLink
-                to={`roomBook/${room.id}`}
-                key={room.id}
-                >
+                <div key={room.id}>  
                     <Card 
                     title={room.title} 
                     image={room.image} 
@@ -41,7 +38,7 @@ function Room() {
                     new={room.new}
                     id={room.id}
                     />
-                </NavLink>
+                </div>
             ))}
             
         </div>
