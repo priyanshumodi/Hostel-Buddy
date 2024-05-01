@@ -40,9 +40,10 @@ function Card(details) {
          
                     <div className="flex justify-around py-4 ">
 
-                      <button  onClick={() => navigate(`roomBook/${details.id}`)} className={`uppercase  ${details.new==true?"":"hidden"} bg-amber-500 hover:bg-amber-600 text-white w-32 h-9 rounded-md`}>view details</button>
-                      <button onClick={() => navigate(`roomBook/${details.id}`)} className={`uppercase ${details.new==true?"":"hidden"} bg-gray-800 hover:bg-gray-900 w-32 text-white h-9 rounded-md`}>Book Now</button>
-                        <button onClick={() => {const id = details.id;dispatch(removeRoom({id}))}} className={`uppercase ${details.new===false?"":"hidden"} bg-red-600 hover:bg-rose-700 w-32 text-white h-9 rounded-md`}>Remove Room</button>
+                      <button  onClick={() => navigate(`roomBook/${details.id}`)} className={`uppercase  ${details.admin?"hidden":""} bg-amber-500 hover:bg-amber-600 text-white w-32 h-9 rounded-md`}>view details</button>
+                      <button onClick={() => navigate(`roomBook/${details.id}`)} className={`uppercase ${details.admin?"hidden":""} bg-gray-800 hover:bg-gray-900 w-32 text-white h-9 rounded-md`}>Book Now</button>
+                      <button  className={`uppercase ${details.admin?"":"hidden"} bg-amber-500 hover:bg-amber-600 w-32 text-white h-9 rounded-md`}>update</button>
+                      <button onClick={() => {const id = details.id;dispatch(removeRoom({id}))}} className={`uppercase ${details.admin?"":"hidden"} bg-red-600 hover:bg-rose-700 w-32 text-white h-9 rounded-md`}>Remove Room</button>
                     </div>
 
                     </div>

@@ -22,13 +22,14 @@ function AdminRoom() {
                     <div className=" w-16 h-1 border-2 border-yellow-400 rounded-2xl mt-[11px] mb-2"></div>
                 </div>
                 <div className="text-5xl font-bold mt-2 mb-12">
-                    Explore Our <span class="text-yellow-500">ROOMS</span>
+                     Total <span class="text-yellow-500">ROOMS - </span>  {rooms.length}
                 </div>
         
                 <div className="grid gap-x-8 gap-y-4 grid-cols-3">
                     {rooms.map((room) => (
                         <div key={room.id}>  
                             <Card 
+                            admin={true}
                             title={room.title} 
                             image={room.image} 
                             price={room.price}
@@ -38,6 +39,10 @@ function AdminRoom() {
                         </div>
                     ))}
             
+                </div>
+
+                <div>
+                <button  className={`uppercase bg-blue-600 hover:bg-blue-700 text-white w-32 h-9 rounded-md`}>add room</button>
                 </div>
             </div>
         </>

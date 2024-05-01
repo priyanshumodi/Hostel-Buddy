@@ -18,9 +18,32 @@ export const roomSlice = createSlice({
         removeRoom: (state,action) => {
             state.room = state.room.filter((prev) => (prev.id !== action.payload.id))
             console.log("state.room")
+        },
+        addRoom: (state,action) => {
+            const tempRoom = {
+                id:nanoid(),
+                title:action.payload.title,
+                image:action.payload.image,
+                price:action.payload.price,
+                description:action.payload.description,
+                new:true
+            }
+            state.room.push(tempRoom)
+        },
+        updateRoom: (state,action) => {
+            const tempRoom = {
+                id:action.payload.id,
+                title:action.payload.title,
+                image:action.payload.image,
+                price:action.payload.price,
+                description:action.payload.description,
+                new:true
+            }
+
+            state.room = state.room.map((prev) => (prev.id === action.payload.id ? tempRoom : prev))
         }
     }
 })
 
-export const {removeRoom} = roomSlice.actions
+export const {removeRoom,addRoom,updateRoom} = roomSlice.actions
 export default roomSlice.reducer
