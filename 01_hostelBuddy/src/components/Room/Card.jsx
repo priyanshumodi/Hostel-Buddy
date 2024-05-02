@@ -21,7 +21,7 @@ function Card(details) {
                   <div className="relative px-4 -mt-16  ">
                     <div className="bg-white p-6 rounded-lg shadow-lg">
                     <div className="flex items-baseline">
-                      <span className={`bg-teal-200 text-teal-800 ${(details.new===true)?"":"hidden"} text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide`}>
+                      <span className={`bg-teal-200 text-teal-800 ${(details.new)?"":"hidden"} text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide`}>
                         New
                       </span>
                     </div>
@@ -43,7 +43,7 @@ function Card(details) {
                       <button  onClick={() => navigate(`roomBook/${details.id}`)} className={`uppercase  ${details.admin?"hidden":""} bg-amber-500 hover:bg-amber-600 text-white w-32 h-9 rounded-md`}>view details</button>
                       <button onClick={() => navigate(`roomBook/${details.id}`)} className={`uppercase ${details.admin?"hidden":""} bg-gray-800 hover:bg-gray-900 w-32 text-white h-9 rounded-md`}>Book Now</button>
                       <button  className={`uppercase ${details.admin?"":"hidden"} bg-amber-500 hover:bg-amber-600 w-32 text-white h-9 rounded-md`}>update</button>
-                      <button onClick={() => {const id = details.id;dispatch(removeRoom({id}))}} className={`uppercase ${details.admin?"":"hidden"} bg-red-600 hover:bg-rose-700 w-32 text-white h-9 rounded-md`}>Remove Room</button>
+                      <button onClick={() => {const id = details.id;dispatch(removeRoom({id}))}} className={`uppercase ${details.admin?"":"hidden"} bg-red-600 hover:bg-red-700 w-32 text-white h-9 rounded-md`}>Remove Room</button>
                     </div>
 
                     </div>

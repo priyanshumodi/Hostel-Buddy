@@ -115,7 +115,7 @@ function Contact() {
                     Send Inquiry
                   </button>
                 </form>
-              </div>
+            </div>
               
            
          </div>

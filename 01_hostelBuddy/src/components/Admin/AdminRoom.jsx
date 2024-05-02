@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../Room/Card";
 import {useSelector} from "react-redux"
+import AddRoomForm from "./AddRoomForm";
 
 function AdminRoom() {
+    const [popup,setPopup] = useState()
     const rooms = useSelector(state => state.roomReducer.room)
     const background = "https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 
@@ -41,9 +43,14 @@ function AdminRoom() {
             
                 </div>
 
-                <div>
-                <button  className={`uppercase bg-blue-600 hover:bg-blue-700 text-white w-32 h-9 rounded-md`}>add room</button>
+                <div className="mt-4">
+                <button onClick={() => setPopup(true)} className={`uppercase bg-blue-600 hover:bg-blue-700 text-white w-32 h-9 rounded-md`}>add room</button>
                 </div>
+
+                {popup && (<AddRoomForm/>)}
+                {popup && (
+                    <button onClick={() => setPopup(false)} className={`uppercase bg-red-600 hover:bg-red-700 text-white w-32 h-9 rounded-md`}>cancel</button>
+                )}
             </div>
         </>
     )
