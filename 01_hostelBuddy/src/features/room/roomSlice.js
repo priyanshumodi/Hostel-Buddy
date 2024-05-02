@@ -37,7 +37,7 @@ export const roomSlice = createSlice({
                 image:action.payload.image,
                 price:action.payload.price,
                 description:action.payload.description,
-                new:true
+                new:action.payload.new
             }
 
             state.room = state.room.map((prev) => (prev.id === action.payload.id ? tempRoom : prev))

@@ -17,6 +17,11 @@ function AdminRoom() {
        setUpdate(true)
     }
 
+    const onFormSubmit = () => {
+        setPopup(false)
+        setUpdate(false)
+    }
+
     return (
         <>
             {background && (
@@ -68,7 +73,7 @@ function AdminRoom() {
                         description={updateDetail.description}
                         new = {updateDetail.new}
                         update = {true}
-
+                        onFormSubmit = {onFormSubmit}
                     />) : ( 
                     <AddRoomForm
                         id={''}
@@ -78,6 +83,7 @@ function AdminRoom() {
                         description={''}
                         new = {''}
                         update = {false}
+                        onFormSubmit = {onFormSubmit}
                     />) )}
 
                 {popup && (

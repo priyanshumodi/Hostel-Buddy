@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from "react";
 import { useDispatch } from "react-redux";
-import { addRoom } from "../../features/room/roomSlice";
+import { addRoom, updateRoom} from "../../features/room/roomSlice";
 
 function AddRoomForm(details) {
     console.log(details.update)
@@ -11,6 +11,7 @@ function AddRoomForm(details) {
 
     const dispatch = useDispatch()
 
+    // update refresh
     useEffect(() => {
      
       if(!details.update) {
@@ -27,14 +28,27 @@ function AddRoomForm(details) {
       }
     },[details.update])
 
+    // form submit
     const handleSubmit = (e) => {
       e.preventDefault()
+
+      if(details.update)
+      {
+        const id = details.id
+        const newCard = details.new 
+        
+        dispatch(updateRoom({id,title,image,price,description,new:newCard}))
+
+      }
+      else
       dispatch(addRoom({title,image,price,description}))
+
       setTitle('')
       setImage('')
       setPrice('')
       setDescription('')
       
+      details.onFormSubmit()
     }
 
 
