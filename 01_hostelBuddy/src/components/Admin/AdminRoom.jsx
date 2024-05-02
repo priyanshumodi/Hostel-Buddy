@@ -5,8 +5,17 @@ import AddRoomForm from "./AddRoomForm";
 
 function AdminRoom() {
     const [popup,setPopup] = useState()
+    const [update,setUpdate] = useState()
+    const [updateDetail,setUpdateDetail] = useState()
     const rooms = useSelector(state => state.roomReducer.room)
     const background = "https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+
+    const handleUpdateClick = (recieveDetails) => {
+       setUpdateDetail(recieveDetails)
+       console.log(recieveDetails)
+       setPopup(true)
+       setUpdate(true)
+    }
 
     return (
         <>
@@ -35,8 +44,10 @@ function AdminRoom() {
                             title={room.title} 
                             image={room.image} 
                             price={room.price}
+                            description={room.description}
                             new={room.new}
                             id={room.id}
+                            updateClick={handleUpdateClick}
                             />
                         </div>
                     ))}
@@ -44,10 +55,31 @@ function AdminRoom() {
                 </div>
 
                 <div className="mt-4">
-                <button onClick={() => setPopup(true)} className={`uppercase bg-blue-600 hover:bg-blue-700 text-white w-32 h-9 rounded-md`}>add room</button>
+                <button onClick={() => {setUpdate(false);setPopup(true)}} className={`uppercase bg-blue-600 hover:bg-blue-700 text-white w-32 h-9 rounded-md`}>add room</button>
                 </div>
 
-                {popup && (<AddRoomForm/>)}
+                {popup && ( update ? (
+                    <AddRoomForm 
+                        
+                        id={updateDetail.id}
+                        title={updateDetail.title}
+                        image={updateDetail.image}
+                        price={updateDetail.price}
+                        description={updateDetail.description}
+                        new = {updateDetail.new}
+                        update = {true}
+
+                    />) : ( 
+                    <AddRoomForm
+                        id={''}
+                        title={''}
+                        image={''}
+                        price={''}
+                        description={''}
+                        new = {''}
+                        update = {false}
+                    />) )}
+
                 {popup && (
                     <button onClick={() => setPopup(false)} className={`uppercase bg-red-600 hover:bg-red-700 text-white w-32 h-9 rounded-md`}>cancel</button>
                 )}

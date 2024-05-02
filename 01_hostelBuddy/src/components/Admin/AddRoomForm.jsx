@@ -1,15 +1,31 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import { useDispatch } from "react-redux";
 import { addRoom } from "../../features/room/roomSlice";
 
-function AddRoomForm() {
-
-    const [title, setTitle] = useState('')
-    const [image, setImage] = useState('')
-    const [price, setPrice] = useState('')
-    const [description, setDescription] = useState('')
+function AddRoomForm(details) {
+    console.log(details.update)
+    const [title, setTitle] = useState(details.title)
+    const [image, setImage] = useState(details.image)
+    const [price, setPrice] = useState(details.price)
+    const [description, setDescription] = useState(details.description)
 
     const dispatch = useDispatch()
+
+    useEffect(() => {
+     
+      if(!details.update) {
+        setTitle('')
+        setImage('')
+        setPrice('')
+        setDescription('')
+      }
+      else {
+        setTitle(details.title)
+        setImage(details.image)
+        setPrice(details.price)
+        setDescription(details.description)
+      }
+    },[details.update])
 
     const handleSubmit = (e) => {
       e.preventDefault()
@@ -63,9 +79,16 @@ function AddRoomForm() {
           <div className="flex flex-col">
             <textarea id="description" required={true} value={description} name="description" onChange={e => setDescription(e.target.value)} rows="5" placeholder="description" className="border border-gray-300 p-2 focus:outline-none focus:ring-1 focus:ring-yellow-500"></textarea>
           </div>
-          <button type="submit" className="uppercase text-xl text-center p-4 bg-amber-500 text-white rounded hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400">
+          {!details.update && (
+            <button type="submit" className="uppercase text-xl text-center p-4 bg-blue-600 text-white rounded hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400">
             add
-          </button>
+            </button>
+          )}
+          {details.update && (
+            <button type="submit" className="uppercase text-xl text-center p-4 bg-amber-500 text-white rounded hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400">
+            update
+            </button>
+          )}
         </form>
         </div>
     )
