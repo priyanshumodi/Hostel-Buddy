@@ -17,7 +17,7 @@ function About() {
        )}
           
        
-       <div className="mt-8 px-28 flex  justify-between flex-wrap">
+       <div className="mt-8 mb-4 px-28 flex  justify-between flex-wrap">
         <div className="w-[34rem] mt-24 flex flex-wrap">
           <div className="flex flex-wrap">
             <div className="uppercase text-yellow-500 font-bold mx-1 text-lg mr-2">About us</div>
