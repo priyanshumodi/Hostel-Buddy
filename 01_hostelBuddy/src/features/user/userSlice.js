@@ -1,8 +1,9 @@
 import { createSlice,nanoid } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
 const initialState = {
-    room:[
-        {id:nanoid(),roomId:"",name:"",email:"",payment:""},
+    users:[
+        // {id:nanoid(),roomName:"",name:"",email:"",payment:""},
+        
     ],
 }
 
@@ -14,7 +15,15 @@ export const userSlice = createSlice({
             const rooms = useSelector(state => state.roomReducer.room)
             const found = rooms.find(room => room.id===action.payload.id)
 
-            const
+            const tempUser = {
+                id:nanoid(),
+                roomName:found.title,
+                name:action.payload.name,
+                email:action.payload.email,
+                payment:action.payload.payment
+            }
+
+            state.users.push(tempUser)
         },
     }
 })

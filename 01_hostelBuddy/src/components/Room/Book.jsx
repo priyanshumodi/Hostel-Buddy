@@ -1,6 +1,6 @@
 import React,{ useState} from 'react';
 import { addUser } from '../../features/user/userSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 const Book = (details) => {
@@ -14,9 +14,15 @@ const Book = (details) => {
 
   const navigate = useNavigate()
 
+  const user =  useSelector(state => state.userReducer.users)
+
   const handleSubmit = (e) => {
+    console.log("jaong")
     e.preventDefault()
     dispatch(addUser({id,name,email,price,payment}))
+
+    console.log(user)
+
     setId('')
     setName('')
     setEmail('')
