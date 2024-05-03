@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Admin() {
 
@@ -13,7 +14,8 @@ function Admin() {
             </div> 
          )}
 
-        <div className="w-full h-auto px-28 mt-24 text-center pb-8">
+        <div className="mb-8">
+            <div className="w-full h-auto px-28 mt-24 text-center pb-8">
                 <div className="flex justify-center">
                     <div className=" w-16 h-1 border-2 border-yellow-400 rounded-2xl mt-[11px] mb-2"></div>
                     <div className="mx-2 uppercase font-bold text-yellow-500">Our Members</div>
@@ -22,8 +24,23 @@ function Admin() {
                 <div className="text-5xl font-bold mt-2 mb-12">
                      Total <span class="text-yellow-500">MEMBERS - </span> 
                 </div>
-
-
+            </div>
+    
+            <div className="mx-8 grid gap-x-8 gap-y-4 grid-cols-3">
+                <div className="shadow-md shadow-blue-200/50 p-5 border rounded text-center text-gray-500 max-w-sm">
+                    <img
+                      className="w-32 h-32 rounded-full mx-auto"
+                      src={'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=600'}
+                      alt="User avatar"
+                    />
+                    <div className="text-sm mt-5">
+                      <h1 className="uppercase text-xl font-medium">priyanshu Modi</h1>
+                      <p>Software Engineer</p>
+                    </div>
+              
+                    <p className="mt-2 text-sm text-gray-900">persuing b.tech form iist</p>
+                </div>
+            </div>
         </div>
         </>
     )

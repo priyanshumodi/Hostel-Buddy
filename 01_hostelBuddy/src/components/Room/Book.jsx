@@ -1,18 +1,44 @@
-import React from 'react';
+import React,{ useState} from 'react';
+import { addUser } from '../../features/user/userSlice';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-const Book = () => {
+const Book = (details) => {
+  const [id,setId] = useState(details.userId)
+  const [name,setName] = useState('')
+  const [email,setEmail] = useState('')
+  const [price,setPrice] = useState(details.price)
+  const [payment,setPayment] = useState('')
+
+  const dispatch = useDispatch()
+
+  const navigate = useNavigate()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    dispatch(addUser({id,name,email,price,payment}))
+    setId('')
+    setName('')
+    setEmail('')
+    setPrice('')
+    setPayment('')
+
+    navigate('/room')
+  }
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold text-center mb-4">Hostel Booking Form</h1>
-      <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div className="mb-4">
-          <label className="block text-zinc-700 text-sm font-bold mb-2" htmlFor="name">
+          <label  className="block text-zinc-700 text-sm font-bold mb-2" htmlFor="name">
             Full Name
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-zinc-700 leading-tight focus:outline-none focus:shadow-outline"
             id="name"
             type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             placeholder="Enter your full name"
           />
         </div>
@@ -24,10 +50,12 @@ const Book = () => {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-zinc-700 leading-tight focus:outline-none focus:shadow-outline"
             id="email"
             type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email address"
           />
         </div>
-        <div className="mb-4">
+        {/* <div className="mb-4">
           <label className="block text-zinc-700 text-sm font-bold mb-2" htmlFor="check-in">
             Check-in Date
           </label>
@@ -36,7 +64,7 @@ const Book = () => {
             id="check-in"
             type="date"
           />
-        </div>
+        </div> */}
         <div className="mb-4">
           <label className="block text-zinc-700 text-sm font-bold mb-2" htmlFor="name">
             Price
@@ -45,6 +73,8 @@ const Book = () => {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-zinc-700 leading-tight focus:outline-none focus:shadow-outline"
             id="price"
             type="text"
+            readOnly
+            value={price}
             placeholder="Enter amount"
           />
         </div>
@@ -53,6 +83,8 @@ const Book = () => {
             Payment Method
           </label>
           <select
+            value={payment}
+            onChange={(e) => setPayment(e.target.value)}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-zinc-700 leading-tight focus:outline-none focus:shadow-outline"
             id="payment"
           >
