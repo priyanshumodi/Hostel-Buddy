@@ -16,8 +16,8 @@ function Admin() {
             </div> 
          )}
 
-        <div className="mb-8">
-            <div className="w-full h-auto px-28 mt-24 text-center pb-8">
+        <div className="mt-8 bg-white mb-8 ">
+            <div className="w-full h-auto px-28  text-center pb-8">
                 <div className="flex justify-center">
                     <div className=" w-16 h-1 border-2 border-yellow-400 rounded-2xl mt-[11px] mb-2"></div>
                     <div className="mx-2 uppercase font-bold text-yellow-500">Our Members</div>
@@ -30,7 +30,7 @@ function Admin() {
     
             <div className="mx-8 grid gap-x-8 gap-y-4 grid-cols-3">
                 {users && users.map((user) => (
-                  <div className="shadow-md shadow-blue-200/50 p-5 border rounded text-center text-gray-500 max-w-sm">
+                  <div className="shadow-md bg-gray-500 shadow-blue-200/50 p-5 border rounded text-center text-gray-500 max-w-sm">
                   <img
                     className="w-32 h-32 rounded-full mx-auto"
                     src={'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=600'}

@@ -8,20 +8,21 @@ const Book = (details) => {
   const [name,setName] = useState('')
   const [email,setEmail] = useState('')
   const [price,setPrice] = useState(details.price)
-  const [payment,setPayment] = useState('')
+  const [payment,setPayment] = useState('credit')
 
   const dispatch = useDispatch()
 
   const navigate = useNavigate()
 
   const user =  useSelector(state => state.userReducer.users)
+  const rooms = useSelector(state => state.roomReducer.room)
 
   const handleSubmit = (e) => {
-    console.log("jaong")
     e.preventDefault()
-    dispatch(addUser({id,name,email,price,payment}))
+   
+    const found = rooms.find(room => room.id===id)
 
-    console.log(user)
+    dispatch(addUser({id,name,email,price,title:found.title,payment}))
 
     setId('')
     setName('')
@@ -44,6 +45,7 @@ const Book = (details) => {
             id="name"
             type="text"
             value={name}
+            required = {true}
             onChange={(e) => setName(e.target.value)}
             placeholder="Enter your full name"
           />
@@ -57,6 +59,7 @@ const Book = (details) => {
             id="email"
             type="email"
             value={email}
+            required = {true}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email address"
           />

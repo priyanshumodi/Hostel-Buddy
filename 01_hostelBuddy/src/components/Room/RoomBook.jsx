@@ -85,7 +85,7 @@ function RoomBook() {
           </div>
         </div>
       </div>
-      {isPopupOpen && <Book id={userId} price={price} onClose={() => setIsPopupOpen(false)} />}  {/* Render PopupForm conditionally */}
+      {isPopupOpen && <Book userId={userId} price={price} onClose={() => setIsPopupOpen(false)} />}  {/* Render PopupForm conditionally */}
       {isPopupOpen &&(
           <div>
             <button
