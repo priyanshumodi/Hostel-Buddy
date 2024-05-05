@@ -30,9 +30,9 @@ function Admin() {
     
             <div className="mx-8 grid gap-x-8 gap-y-4 grid-cols-3">
                 {users && users.map((user) => (
-                  <div className="shadow-md bg-gray-500 shadow-blue-200/50 p-5 border rounded text-center text-gray-500 max-w-sm">
+                  <div className="shadow-md bg-gray-300 shadow-blue-200/50 p-5 border rounded text-center text-gray-500 max-w-sm">
                   <img
-                    className="w-32 h-32 rounded-full mx-auto"
+                    className="w-20 h-20 rounded-full mx-auto"
                     src={'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=600'}
                     alt="User avatar"
                   />
@@ -41,7 +41,14 @@ function Admin() {
                     <p>Software Engineer</p>
                   </div>
             
-                  <p className="mt-2 text-sm text-gray-900">persuing b.tech form iist</p>
+                  <div className="mt-2 text-sm text-gray-900">
+                    <div>
+                    {user.roomName}
+                    </div>
+                    <div>
+                      {user.price} :- {user.paid}
+                    </div>
+                  </div>
               </div>
                 ))}
             </div>

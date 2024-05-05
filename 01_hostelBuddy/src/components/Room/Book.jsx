@@ -22,7 +22,7 @@ const Book = (details) => {
    
     const found = rooms.find(room => room.id===id)
 
-    dispatch(addUser({id,name,email,price,title:found.title,payment}))
+    dispatch(addUser({id,name,email,price,title:found.title,payment,}))
 
     setId('')
     setName('')

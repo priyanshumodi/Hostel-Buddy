@@ -18,7 +18,9 @@ export const userSlice = createSlice({
                 roomName:action.payload.title,
                 name:action.payload.name,
                 email:action.payload.email,
-                payment:action.payload.payment
+                payment:action.payload.payment,
+                paid: "paid",
+                price: action.payload.price,
             }
 
             state.users.push(tempUser)
